@@ -8,6 +8,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/estudiantes", estudiantesRoutes);
+app.get("/", (req, res) => {
+  res.send("Bienvenido a API Gestión Académica");
+});
 
 dbconnect()
   .then(() => {
